@@ -9,6 +9,8 @@ Source1:        https://raw.githubusercontent.com/dankamongmen/fedora-mmmmlady/m
 Source2:        https://nick-black.com/dankamongmen.gpg
 
 BuildRequires: cmake
+BuildRequires: gnupg2
+BuildRequires: gcc-c++
 
 %description
 A fast (both in compile times and runtime) C++ testing framework, with the
