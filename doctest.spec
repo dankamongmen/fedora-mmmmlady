@@ -15,6 +15,8 @@ A fast (both in compile times and runtime) C++ testing framework, with the
 ability to write tests directly along production source (or in their own
 source, if you prefer).
 
+%global debug_package %{nil}
+
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %autosetup
@@ -28,10 +30,14 @@ cd build
 %install
 cd build
 %make_install
+mkdir -p %{buildroot}/%{_docdir}/doctest
+install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 
 %files
+%docdir %{_docdir}/doctest
 %doc CHANGELOG.md README.md
 %license LICENSE.txt
 %{_includedir}/doctest/
 %{_libdir}/cmake/doctest/
-%{_docdir}/doctest/
+%{_docdir}/doctest/CHANGELOG.md
+%{_docdir}/doctest/README.md
