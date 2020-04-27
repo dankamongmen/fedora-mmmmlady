@@ -31,6 +31,7 @@ cd build
 
 %files
 %doc CHANGELOG.md README.md
-%license COPYRIGHT LICENSE
-%{_includedir}/*.h
-%{_libdir}/cmake/doctest
+%license LICENSE.txt
+%{_includedir}/doctest/
+%{_libdir}/cmake/doctest/
+%{_docdir}/doctest/
