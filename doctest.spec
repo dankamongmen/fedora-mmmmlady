@@ -1,4 +1,4 @@
-Name:           doctest-devel
+Name:           doctest
 Version:        2.3.7
 Release:        1%{?dist}
 Summary:        C++ header-only unit testing framework
