@@ -5,7 +5,7 @@ Summary:        C++ header-only unit testing framework
 License:        MIT
 URL:            https://github.com/onqtam/doctest
 Source0:        https://github.com/onqtam/doctest/archive/%{version}.tar.gz
-Source1:        https://github.com/dankamongmen/fedora-mmmmlady/doctest-%{version}.tar.gz.asc
+Source1:        https://raw.githubusercontent.com/dankamongmen/fedora-mmmmlady/master/%{version}.tar.gz.asc
 Source2:        https://nick-black.com/dankamongmen.gpg
 
 %description
