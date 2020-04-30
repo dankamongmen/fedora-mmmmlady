@@ -1,4 +1,4 @@
-Name:           doctest
+Name:           doctest-devel
 Version:        2.3.7
 Release:        1%{?dist}
 Summary:        C++ header-only unit testing framework
@@ -20,7 +20,7 @@ source, if you prefer).
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
-%autosetup
+%setup -n doctest-%{version}
 
 %build
 mkdir build
