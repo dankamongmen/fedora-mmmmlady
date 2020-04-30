@@ -25,7 +25,7 @@ source, if you prefer).
 %build
 mkdir build
 cd build
-%cmake ..
+%cmake -DCMAKE_INSTALL_LIBDIR=/usr/share/cmake/Modules ..
 %make_build
 
 %install
