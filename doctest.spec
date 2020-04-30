@@ -11,13 +11,12 @@ Source2:        https://nick-black.com/dankamongmen.gpg
 BuildRequires: cmake
 BuildRequires: gnupg2
 BuildRequires: gcc-c++
+BuildArch: noarch
 
 %description
 A fast (both in compile times and runtime) C++ testing framework, with the
 ability to write tests directly along production source (or in their own
 source, if you prefer).
-
-%global debug_package %{nil}
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
@@ -36,13 +35,11 @@ mkdir -p %{buildroot}/%{_docdir}/doctest
 install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 
 %files
-%docdir %{_docdir}/doctest
 %doc CHANGELOG.md README.md
 %license LICENSE.txt
 %{_includedir}/doctest/
 %{_libdir}/cmake/doctest/
-%{_docdir}/doctest/CHANGELOG.md
-%{_docdir}/doctest/README.md
+%{_docdir}/doctest/
 
 %changelog
 * Thu Apr 30 2020 Nick Black <dank@qemfd.net> - 2.3.7-1
