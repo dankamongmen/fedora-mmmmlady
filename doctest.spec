@@ -43,3 +43,8 @@ install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 %{_libdir}/cmake/doctest/
 %{_docdir}/doctest/CHANGELOG.md
 %{_docdir}/doctest/README.md
+
+%changelog
+* Thu Apr 30 2020 Nick Black <dank@qemfd.net> - 2.3.7-1
+- Initial RPM release
+
