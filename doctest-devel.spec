@@ -20,25 +20,31 @@ source, if you prefer).
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
-%setup -n doctest-%{version}
+%setup -q -n doctest-%{version}
 
 %build
 mkdir build
 cd build
-%cmake -DCMAKE_INSTALL_LIBDIR=/usr/share/cmake/Modules ..
+%cmake ..
 %make_build
 
 %install
 cd build
 %make_install
 mkdir -p %{buildroot}/%{_docdir}/doctest
+mkdir -p %{buildroot}/%{_datarootdir}/cmake/Modules
+mv %{buildroot}/%{_libdir}/cmake/doctest/* %{buildroot}/%{_datarootdir}/cmake/Modules/
 install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 
 %files
 %doc CHANGELOG.md README.md
 %license LICENSE.txt
 %{_includedir}/doctest/
-%{_libdir}/cmake/doctest/
+%{_datarootdir}/cmake/Modules/doctest.cmake
+%{_datarootdir}/cmake/Modules/doctestConfig.cmake
+%{_datarootdir}/cmake/Modules/doctestConfigVersion.cmake
+%{_datarootdir}/cmake/Modules/doctestTargets.cmake
+%{_datarootdir}/cmake/Modules/doctestAddTests.cmake
 %{_docdir}/doctest/
 
 %changelog
