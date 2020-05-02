@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           doctest-devel
 Version:        2.3.7
 Release:        1%{?dist}
@@ -11,7 +13,6 @@ Source2:        https://nick-black.com/dankamongmen.gpg
 BuildRequires: cmake
 BuildRequires: gnupg2
 BuildRequires: gcc-c++
-BuildArch: noarch
 
 %description
 A fast (both in compile times and runtime) C++ testing framework, with the
@@ -32,19 +33,13 @@ cd build
 cd build
 %make_install
 mkdir -p %{buildroot}/%{_docdir}/doctest
-mkdir -p %{buildroot}/%{_datarootdir}/cmake/Modules
-mv %{buildroot}/%{_libdir}/cmake/doctest/* %{buildroot}/%{_datarootdir}/cmake/Modules/
 install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 
 %files
 %doc CHANGELOG.md README.md
 %license LICENSE.txt
 %{_includedir}/doctest/
-%{_datarootdir}/cmake/Modules/doctest.cmake
-%{_datarootdir}/cmake/Modules/doctestConfig.cmake
-%{_datarootdir}/cmake/Modules/doctestConfigVersion.cmake
-%{_datarootdir}/cmake/Modules/doctestTargets.cmake
-%{_datarootdir}/cmake/Modules/doctestAddTests.cmake
+%{_libdir}/cmake/doctest
 %{_docdir}/doctest/
 
 %changelog
