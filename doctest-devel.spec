@@ -7,11 +7,8 @@ Summary:        C++ header-only unit testing framework
 License:        MIT
 URL:            https://github.com/onqtam/doctest
 Source0:        https://github.com/onqtam/doctest/archive/%{version}.tar.gz
-Source1:        https://raw.githubusercontent.com/dankamongmen/fedora-mmmmlady/master/%{version}.tar.gz.asc
-Source2:        https://nick-black.com/dankamongmen.gpg
 
 BuildRequires: cmake
-BuildRequires: gnupg2
 BuildRequires: gcc-c++
 
 %description
@@ -42,7 +39,11 @@ install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 %{_libdir}/cmake/doctest
 %{_docdir}/doctest/
 
+%check
+pushd build
+ctest --output-on-failure
+popd
+
 %changelog
 * Thu Apr 30 2020 Nick Black <dank@qemfd.net> - 2.3.7-1
 - Initial RPM release
-
