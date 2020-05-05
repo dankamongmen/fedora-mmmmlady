@@ -17,7 +17,6 @@ ability to write tests directly along production source (or in their own
 source, if you prefer).
 
 %prep
-%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %setup -q -n doctest-%{version}
 
 %build
