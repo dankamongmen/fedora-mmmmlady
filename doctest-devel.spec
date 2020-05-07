@@ -25,6 +25,10 @@ cd build
 %cmake ..
 %make_build
 
+%check
+cd build
+make_check
+
 %install
 cd build
 %make_install
