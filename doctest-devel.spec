@@ -26,8 +26,9 @@ cd build
 %make_build
 
 %check
-cd build
-make_check
+pushd build
+ctest --output-on-failure
+popd
 
 %install
 cd build
@@ -41,11 +42,6 @@ install -m 0644 ../CHANGELOG.md ../README.md %{buildroot}/%{_docdir}/doctest/
 %{_includedir}/doctest/
 %{_libdir}/cmake/doctest
 %{_docdir}/doctest/
-
-%check
-pushd build
-ctest --output-on-failure
-popd
 
 %changelog
 * Thu Apr 30 2020 Nick Black <dank@qemfd.net> - 2.3.7-1
