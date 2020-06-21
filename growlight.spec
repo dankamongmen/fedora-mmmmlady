@@ -2,7 +2,7 @@ Name:          growlight
 Version:       1.2.6
 Release:       1%{?dist}
 Summary:       Disk manipulation and system setup tool
-License:       GPL3
+License:       GPLv3
 URL:           https://nick-black.com/dankwiki/index.php/Growlight
 Source0:       https://github.com/dankamongmen/%{name}/releases/download/v%{version}/%{name}_%{version}.tar.xz
 Source1:       https://github.com/dankamongmen/%{name}/releases/download/v%{version}/%{name}_%{version}.tar.xz.asc
@@ -15,14 +15,14 @@ BuildRequires: libpciaccess-devel
 BuildRequires: cmake
 # for xsltproc
 BuildRequires: libxslt
-BuildRequires: pkgconfig(libssl)
 BuildRequires: pkgconfig(libpci)
-BuildRequires: pkgconfig(notcurses)
 BuildRequires: pkgconfig(libatasmart)
 BuildRequires: pkgconfig(libudev)
+BuildRequires: pkgconfig(nettle)
+BuildRequires: pkgconfig(notcurses)
 BuildRequires: device-mapper-devel
 BuildRequires: cryptsetup-devel
-BuildRequires: docbook5-style-xsl
+BuildRequires: docbook-style-xsl
 BuildRequires: docbook-utils
 
 %description
@@ -54,5 +54,5 @@ cd %{_target_platform}
 %{_mandir}/man8/*.8*
 
 %changelog
-* Thu Jun 21 2020 Nick Black <dankamongmen@gmail.com> - 1.2.6-1
+* Sun Jun 21 2020 Nick Black <dankamongmen@gmail.com> - 1.2.6-1
 - Initial packaging for Fedora 33
