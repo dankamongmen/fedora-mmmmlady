@@ -37,18 +37,22 @@ are available.
 %autosetup
 
 %build
-%configure --disable-zfs
+mkdir %{_target_platform}
+cd %{_target_platform}
+%cmake -DUSE_LIBZFS=off ..
 %make_build
 
 %install
+cd %{_target_platform}
 %make_install
 
 %files
-%doc COPYING README
+%doc README.md
+%license COPYING
 %{_bindir}/growlight
 %{_bindir}/growlight-readline
-%{_mandir}/man1/*.1*
+%{_mandir}/man8/*.8*
 
 %changelog
-* Thu Jun 18 2020 Nick Black <dankamongmen@gmail.com> - 1.2.6-1
+* Thu Jun 21 2020 Nick Black <dankamongmen@gmail.com> - 1.2.6-1
 - Initial packaging for Fedora 33
