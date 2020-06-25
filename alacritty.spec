@@ -5,7 +5,7 @@ Summary:       A cross-platform, GPU enhanced terminal emulator
 License:       ASL 2.0
 URL:           https://github.com/alacritty/alacritty
 VCS:           https://github.com/alacritty/alacritty.git
-Source0:       https://github.com/alacritty/%{name}/releases/download/v%{version}/%{name}_%{version}.tar.xz
+Source0:       https://github.com/alacritty/%{name}/archive/v%{version}.tar.gz
 
 BuildRequires: rust >= 1.32.0
 BuildRequires: cargo
@@ -14,7 +14,7 @@ BuildRequires: pkgconfig(fontconfig)
 BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(xcb)
 BuildRequires: desktop-file-utils
-BuildRequires: %{python}
+BuildRequires: %{python3}
 
 %description
 Alacritty is an OpenGL-based terminal emulator focused on performance. It
