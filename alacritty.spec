@@ -25,11 +25,11 @@ Alacritty is an OpenGL-based terminal emulator focused on performance. It
 supports TrueColor and Wayland.
 
 %prep
-%autosetup -q -n alacritty-%{version}
+%autosetup -n alacritty-%{version_no_tilde}
 %cargo_prep
 
 %build
-cargo_build -a
+%cargo_build -a
 
 %install
 %cargo_install -a
