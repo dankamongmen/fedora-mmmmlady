@@ -7,6 +7,7 @@ URL:           https://github.com/alacritty/alacritty
 VCS:           https://github.com/alacritty/alacritty.git
 Source0:       https://github.com/alacritty/%{name}/archive/v%{version}.tar.gz
 
+BuildRequires: rust-packaging
 BuildRequires: rust >= 1.32.0
 BuildRequires: cargo
 BuildRequires: cmake
@@ -24,7 +25,7 @@ supports TrueColor and Wayland.
 %setup -q -n alacritty-%{version}
 
 %build
-cargo build --release
+cargo build --release --offline
 
 %install
 install -p -D -m755 target/release/alacritty %{buildroot}%{_bindir}/alacritty
