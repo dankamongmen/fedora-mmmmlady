@@ -7,6 +7,8 @@ URL:           https://github.com/alacritty/alacritty
 VCS:           https://github.com/alacritty/alacritty.git
 Source0:       https://github.com/alacritty/%{name}/archive/v%{version}.tar.gz
 
+ExclusiveArch: %{rust_arches}
+
 BuildRequires: rust-packaging
 BuildRequires: rust >= 1.32.0
 BuildRequires: cargo
@@ -16,18 +18,21 @@ BuildRequires: pkgconfig(freetype2)
 BuildRequires: pkgconfig(xcb)
 BuildRequires: desktop-file-utils
 BuildRequires: %{python3}
+BuildRequires: (crate(clap/default) >= 2.0.0 with crate(clap/default) < 3.0.0)
 
 %description
 Alacritty is an OpenGL-based terminal emulator focused on performance. It
 supports TrueColor and Wayland.
 
 %prep
-%setup -q -n alacritty-%{version}
+%autosetup -q -n alacritty-%{version}
+%cargo_prep
 
 %build
-cargo build --release --offline
+cargo_build -a
 
 %install
+%cargo_install -a
 install -p -D -m755 target/release/alacritty %{buildroot}%{_bindir}/alacritty
 install -p -D -m644 extra/linux/alacritty.desktop %{buildroot}%{_datadir}/applications/alacritty.desktop
 install -p -D -m644 extra/logo/alacritty-term.svg %{buildroot}%{_datadir}/pixmaps/Alacritty.svg
