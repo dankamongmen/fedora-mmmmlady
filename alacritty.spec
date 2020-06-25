@@ -19,6 +19,11 @@ BuildRequires: pkgconfig(xcb)
 BuildRequires: desktop-file-utils
 BuildRequires: %{python3}
 BuildRequires: (crate(clap/default) >= 2.0.0 with crate(clap/default) < 3.0.0)
+BuildRequires: (crate(env_logger/default) == 0.7.1)
+BuildRequires: (crate(fnv/default) >= 1.0.0)
+BuildRequires: (crate(glutin/default) >= 0.24.1 with crate(glutin/default) < 1.0.0)
+BuildRequires: (crate(serde/derive) >= 1.0.0)
+BuildRequires: (crate(serde_yaml/default) >= 0.8.0 with crate(serde_yaml/default) < 1.0.0)
 
 %description
 Alacritty is an OpenGL-based terminal emulator focused on performance. It
