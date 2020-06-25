@@ -1,7 +1,7 @@
 Name:          alacritty
 Version:       0.4.3
 Release:       1%{?dist}
-Summary:       A cross-platform, GPU enhanced terminal emulator
+Summary:       A fast OpenGL-based terminal emulator
 License:       ASL 2.0
 URL:           https://github.com/alacritty/alacritty
 VCS:           https://github.com/alacritty/alacritty.git
