@@ -44,8 +44,9 @@ popd
 %make_build -C %{_target_platform}
 
 %install
-cd %{_target_platform}
+pushd %{_target_platform}
 %make_install -C %{_target_platform}
+popd
 
 %files
 %doc README.md
