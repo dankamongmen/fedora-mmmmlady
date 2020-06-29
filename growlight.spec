@@ -2,7 +2,7 @@ Name:          growlight
 Version:       1.2.6
 Release:       1%{?dist}
 Summary:       Disk manipulation and system setup tool
-License:       GPLv3
+License:       GPLv3+
 URL:           https://nick-black.com/dankwiki/index.php/Growlight
 Source0:       https://github.com/dankamongmen/%{name}/releases/download/v%{version}/%{name}_%{version}.tar.xz
 Source1:       https://github.com/dankamongmen/%{name}/releases/download/v%{version}/%{name}_%{version}.tar.xz.asc
@@ -38,13 +38,14 @@ are available.
 
 %build
 mkdir %{_target_platform}
-cd %{_target_platform}
+pushd %{_target_platform}
 %cmake -DUSE_LIBZFS=off ..
-%make_build
+popd
+%make_build -C %{_target_platform}
 
 %install
 cd %{_target_platform}
-%make_install
+%make_install -C %{_target_platform}
 
 %files
 %doc README.md
