@@ -1,5 +1,5 @@
 Name:          alacritty
-Version:       0.4.3
+Version:       0.5.0
 Release:       1%{?dist}
 Summary:       A fast OpenGL-based terminal emulator
 License:       ASL 2.0
@@ -10,7 +10,7 @@ Source0:       https://github.com/alacritty/%{name}/archive/v%{version}.tar.gz
 ExclusiveArch: %{rust_arches}
 
 BuildRequires: rust-packaging
-BuildRequires: rust >= 1.32.0
+BuildRequires: rust >= 1.36.0
 BuildRequires: cargo
 BuildRequires: cmake
 BuildRequires: pkgconfig(fontconfig)
@@ -61,6 +61,18 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/alacritty.desktop
 %{_datadir}/zsh/site-functions/_alacritty
 %{_datadir}/fish/vendor_completions.d/alacritty.fish
 %{_mandir}/man1/alacritty.1*
+
+%triggerun -- bash-completion
+[ $2 -gt 0 ] && exit 0
+rm -f %{bash_completion_path}/alacritty
+
+%triggerun -- zsh
+[ $2 -gt 0 ] && exit 0
+rm -f %{zsh_completion_path}/_alacritty
+
+%triggerun -- fish
+[ $2 -gt 0 ] && exit 0
+rm -f %{fish_completion_path}/alacritty.fish
 
 %changelog
 * Wed Jun 24 2020 Nick Black <dankamongmen@gmail.com> - 0.4.3-1
