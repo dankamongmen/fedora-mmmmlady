@@ -85,5 +85,5 @@ rm -f %{zsh_completion_path}/_alacritty
 rm -f %{fish_completion_path}/alacritty.fish
 
 %changelog
-* Wed Jun 24 2020 Nick Black <dankamongmen@gmail.com> - 0.4.3-1
-- Initial packaging for Fedora 33 (with input from pschyska)
+* Tue Sep 01 2020 Nick Black <dankamongmen@gmail.com> - 0.5.0-1
+- Initial packaging for Fedora 34 (with input from pschyska and zenofile)
