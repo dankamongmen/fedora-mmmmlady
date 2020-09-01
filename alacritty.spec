@@ -62,6 +62,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/alacritty.desktop
 
 %files
 %{_bindir}/alacritty
+%dir %{_datadir}/alacritty/
 %{_datadir}/applications/alacritty.desktop
 %{_datadir}/pixmaps/Alacritty.svg
 %{_datadir}/alacritty/alacritty.yml
