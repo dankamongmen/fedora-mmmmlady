@@ -19,11 +19,20 @@ BuildRequires: pkgconfig(xcb)
 BuildRequires: desktop-file-utils
 BuildRequires: %{python3}
 BuildRequires: (crate(clap/default) >= 2.0.0 with crate(clap/default) < 3.0.0)
+BuildRequires: (crate(copypasta/default) >= 0.7.0 with crate(copypasta/default) < 1.0.0)
+BuildRequires: (crate(crossfont/default) >= 0.1.0 with crate(crossfont/default) < 1.0.0)
 BuildRequires: (crate(env_logger/default) == 0.7.1)
 BuildRequires: (crate(fnv/default) >= 1.0.0)
-BuildRequires: (crate(glutin/default) >= 0.24.1 with crate(glutin/default) < 1.0.0)
+BuildRequires: (crate(glutin_egl_sys/default) >= 0.1.5 with crate(glutin_egl_sys/default) < 1.0.0)
+BuildRequires: (crate(log/std) >= 0.4 with crate(log/std) < 1.0.0)
+BuildRequires: (crate(notify/default) >= 4.0.0)
+BuildRequires: (crate(parking_lot/default) >= 0.10.2)
 BuildRequires: (crate(serde/derive) >= 1.0.0)
+BuildRequires: (crate(serde_json/default) >= 1.0.0 with crate(serde_json/default) < 2.0.0)
 BuildRequires: (crate(serde_yaml/default) >= 0.8.0 with crate(serde_yaml/default) < 1.0.0)
+BuildRequires: (crate(time/default) >= 0.1.40)
+BuildRequires: (crate(unicode-width/default) >= 0.1.0)
+BuildRequires: (crate(urlocator/default) >= 0.1.4)
 
 %description
 Alacritty is an OpenGL-based terminal emulator focused on performance. It
